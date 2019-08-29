@@ -1,0 +1,35 @@
+<!DOCTYPE html><html>
+<head>
+  <title>Date</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1 id="h1">Ed Ochoa</h1>
+  <h2 id="h2">La fecha y la hora son:</h2>
+  <div id="fecha"></div>
+
+ <script type="text/javascript">
+  let fecha = new Date();
+  let msj;
+  let inner = document.getElementById("h1").innerHTML;
+  let outer = document.getElementById("h2").outerHTML;
+  let href = location.href;
+  let width = screen.width;
+  let height = screen.height;
+
+  if      (fecha.getHours() < 7)  { msj = "Buenas noches";}
+  else if (fecha.getHours() < 12) { msj = "Buenos días";}
+  else if (fecha.getHours() < 21) { msj = "Buenas tardes";}
+  else                                          { msj = "Buenas noches";}
+
+  document.getElementById("h1").innerHTML    = msj;
+  document.getElementById("fecha").innerHTML = `Fecha: ${fecha}</br>
+  innerHTML: ${inner}</br>
+  outerHTML: ${outer}</br>
+  href: ${href}</br>
+  location: ${location}</br>
+  screen.width: ${width}</br>
+  screen.height: ${height}`;
+</script>
+</body>
+</html>
